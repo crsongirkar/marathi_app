@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मराठी (Marathi) | Learn Marathi Step by Step through Questions</title>
+    <meta name="description" content="Master Marathi step by step with real questions, Hindi translation support, audio pronunciation, and real-time progress tracking. Designed for RTO questions and everyday practice.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar" id="main-nav">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-logo" id="nav-logo-link" aria-label="Marathi Home">
+                <img src="assets/images/logo_marathi.png" alt="मराठी" class="logo-img" id="marathi-logo-img">
+                <span class="logo-tagline" data-i18n="nav.tagline">Learn Together &nbsp;|&nbsp; Grow Together</span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-links" id="desktop-nav-links" aria-label="Main Navigation">
+                <a href="#hero" class="nav-link active" data-i18n="nav.home">Home</a>
+                <a href="#how-it-works" class="nav-link" data-i18n="nav.howItWorks">How It Works</a>
+                <a href="#app-experience" class="nav-link" data-i18n="nav.experience">App Experience</a>
+                <a href="#why-marathi" class="nav-link" data-i18n="nav.whyMarathi">Why Marathi</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+
+            <!-- Actions: Language Switcher & Download CTA -->
+            <div class="nav-actions">
+                <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Language Selector">
+                    <button type="button" class="lang-btn active" id="lang-en-btn" data-lang="en">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button type="button" class="lang-btn" id="lang-hi-btn" data-lang="hi">हिंदी</button>
+                </div>
+                <a href="#download" class="btn btn-primary nav-cta-btn" id="nav-download-btn">
+                    <span data-i18n="cta.downloadApp">Download App</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <button type="button" class="hamburger-btn" id="hamburger-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer" id="mobile-drawer">
+            <div class="mobile-drawer-content">
+                <nav class="mobile-nav-links">
+                    <a href="#hero" class="mobile-link" data-i18n="nav.home">Home</a>
+                    <a href="#how-it-works" class="mobile-link" data-i18n="nav.howItWorks">How It Works</a>
+                    <a href="#app-experience" class="mobile-link" data-i18n="nav.experience">App Experience</a>
+                    <a href="#why-marathi" class="mobile-link" data-i18n="nav.whyMarathi">Why Marathi</a>
+                    <a href="#about" class="mobile-link" data-i18n="nav.about">About</a>
+                    <a href="#contact" class="mobile-link" data-i18n="nav.contact">Contact</a>
+                </nav>
+                <div class="mobile-drawer-footer">
+                    <div class="mobile-lang-box">
+                        <span class="mobile-lang-label" data-i18n="nav.languageLabel">Language:</span>
+                        <div class="lang-switcher mobile-lang">
+                            <button type="button" class="lang-btn active" data-lang="en">EN</button>
+                            <span class="lang-divider">|</span>
+                            <button type="button" class="lang-btn" data-lang="hi">हिंदी</button>
+                        </div>
+                    </div>
+                    <a href="#download" class="btn btn-primary btn-block mobile-download-btn" data-i18n="cta.downloadApp">Download App →</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <!-- Subtle Maharashtra Cultural Silhouettes in Background -->
+        <div class="hero-bg-cultural-layer" aria-hidden="true">
+            <div class="cultural-sun"></div>
+            <img src="assets/pngs/26_birds.png" alt="" class="cultural-birds">
+            <img src="assets/pngs/18_fort_background.png" alt="" class="cultural-fort">
+        </div>
+
+        <div class="container hero-container">
+            <!-- Left Side: Hero Copy & Calls-To-Action -->
+            <div class="hero-content">
+                <div class="hero-eyebrow-badge">
+                    <span class="badge-dot"></span>
+                    <span data-i18n="hero.eyebrow">Learn Marathi the Simple Way</span>
+                </div>
+
+                <h1 class="hero-headline">
+                    <span data-i18n="hero.headlinePre">Learn Marathi</span><br>
+                    <span class="highlight-text" data-i18n="hero.headlineHighlight">Step by Step.</span>
+                </h1>
+
+                <p class="hero-description" data-i18n="hero.description">
+                    Practice real questions, understand Marathi with Hindi support, and improve your knowledge at your own pace.
+                </p>
+
+                <!-- Primary Action Buttons -->
+                <div class="hero-cta-group">
+                    <a href="#download" class="btn btn-primary btn-lg hero-cta-btn" id="hero-download-btn">
+                        <span data-i18n="cta.downloadApp">Download App</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary btn-lg" id="hero-howitworks-btn">
+                        <span data-i18n="hero.secondaryCta">See How It Works</span>
+                    </a>
+                </div>
+
+                <!-- App Store Badges (Crisp 4K Vectors) -->
+                <div class="store-badges-wrap">
+                    <a href="#download" class="store-badge-card" aria-label="Get it on Google Play">
+                        <svg class="store-icon" viewBox="0 0 24 24" width="22" height="22">
+                            <path fill="#34A853" d="M3.6 1.8l10.9 10.9L11.7 15.5 3.6 1.8z"/>
+                            <path fill="#4285F4" d="M3.6 1.8C3.2 2.2 3 2.8 3 3.5v17c0 .7.2 1.3.6 1.7l11-11-11-11z"/>
+                            <path fill="#FBBC05" d="M18.8 10.1l-4.3-2.6-2.8 2.8 2.8 2.8 4.3-2.5c.8-.5.8-1.5 0-2z"/>
+                            <path fill="#EA4335" d="M3.6 22.2l10.9-10.9-2.8-2.8L3.6 22.2z"/>
+                        </svg>
+                        <div class="store-badge-text">
+                            <span class="store-label-sub">GET IT ON</span>
+                            <span class="store-label-main">Google Play</span>
+                        </div>
+                    </a>
+
+                    <a href="#download" class="store-badge-card" aria-label="Download on App Store">
+                        <svg class="store-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                            <path d="M18.7 19.5c-.8 1.2-1.7 2.4-3 2.5-1.4.1-1.8-.8-3.3-.8-1.5 0-2 .8-3.3.8-1.3-.1-2.2-1.3-3-2.5-1.7-2.4-3-6.9-1.2-9.9 1-1.6 2.7-2.6 4.5-2.6 1.4 0 2.7.9 3.5.9.8 0 2.4-1.1 4.1-.9 1.4.1 2.7.6 3.6 1.9-3.2 1.9-2.7 6.1.5 7.4-.7 1.2-1.2 2.3-1.7 3.2zM15.9 6.5c.7-.9 1.2-2.1 1-3.3-1 .1-2.3.7-3 1.5-.6.7-1.2 2-1 3.2 1.2.1 2.3-.6 3-1.4z"/>
+                        </svg>
+                        <div class="store-badge-text">
+                            <span class="store-label-sub">Download on the</span>
+                            <span class="store-label-main">App Store</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 3 Feature Indicators -->
+                <div class="hero-feature-indicators">
+                    <div class="feature-indicator-item">
+                        <span class="check-icon">✓</span>
+                        <span data-i18n="hero.feat1">Learn with Questions</span>
+                    </div>
+                    <div class="feature-indicator-item">
+                        <span class="check-icon">✓</span>
+                        <span data-i18n="hero.feat2">Marathi + Hindi Support</span>
+                    </div>
+                    <div class="feature-indicator-item">
+                        <span class="check-icon">✓</span>
+                        <span data-i18n="hero.feat3">Track Your Progress</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Realistic Phone Mockup + Mascot Student -->
+            <div class="hero-visual-col">
+                <div class="hero-mockup-wrapper">
+                    <!-- Mascot Boy Standing Beside Phone & Pointing -->
+                    <div class="hero-mascot-container">
+                        <img src="assets/images/hero_boy_hd.png" alt="Marathi Learning Student Mascot" class="hero-mascot-img">
+                    </div>
+
+                    <!-- Realistic Smartphone Mockup -->
+                    <div class="smartphone-device hero-phone-device">
+                        <div class="device-bezel">
+                            <div class="device-screen">
+                                <!-- Phone Dynamic Island / Status Bar -->
+                                <div class="phone-status-bar">
+                                    <span class="status-time">9:41</span>
+                                    <div class="dynamic-island"></div>
+                                    <div class="status-icons">
+                                        <i class="fa-solid fa-signal"></i>
+                                        <i class="fa-solid fa-wifi"></i>
+                                        <i class="fa-solid fa-battery-full"></i>
+                                    </div>
+                                </div>
+
+                                <!-- App Navigation Header -->
+                                <div class="app-ui-header">
+                                    <img src="assets/images/logo_marathi.png" alt="मराठी" class="app-ui-logo">
+                                    <div class="app-q-counter">
+                                        <span class="q-badge">प्रश्न १ / ४८१</span>
+                                    </div>
+                                </div>
+
+                                <!-- Progress Line -->
+                                <div class="app-progress-bar-wrap">
+                                    <div class="app-progress-fill" style="width: 28%;"></div>
+                                </div>
+
+                                <!-- Real App Question Card -->
+                                <div class="app-question-card">
+                                    <div class="app-card-meta">
+                                        <span class="rto-category-pill">वाहतूक नियम व चिन्हे (RTO)</span>
+                                        <button type="button" class="app-audio-btn" aria-label="Listen in Marathi and Hindi">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                            <span>ऐका</span>
+                                        </button>
+                                    </div>
+
+                                    <h4 class="app-marathi-question">
+                                        पादचारी रस्ता पार करण्याच्या ठिकाणी जेव्हा लोक उभे असतील तेव्हा काय करावे?
+                                    </h4>
+                                    <p class="app-hindi-translation">
+                                        <span class="hi-label">हिंदी अर्थ:</span> पैदल पार पथ पर जब लोग सड़क पार करने के लिए खड़े हों, तब चालक को क्या करना चाहिए?
+                                    </p>
+
+                                    <!-- Question Visual Sign -->
+                                    <div class="app-sign-visual">
+                                        <div class="zebra-sign-icon">
+                                            <i class="fa-solid fa-person-walking"></i>
+                                        </div>
+                                        <span class="zebra-caption">पादचारी पार पथ (Zebra Crossing)</span>
+                                    </div>
+
+                                    <!-- Multiple Choice Options -->
+                                    <div class="app-options-list">
+                                        <div class="app-option-item selected-correct">
+                                            <span class="opt-letter">१</span>
+                                            <span class="opt-text">वाहन थांबवून पादचारी रस्ता ओलांडेपर्यंत प्रतीक्षा करावी</span>
+                                            <i class="fa-solid fa-circle-check opt-status-icon"></i>
+                                        </div>
+                                        <div class="app-option-item">
+                                            <span class="opt-letter">२</span>
+                                            <span class="opt-text">हॉर्न वाजवून वाहन पुढे दामटावे</span>
+                                        </div>
+                                        <div class="app-option-item">
+                                            <span class="opt-letter">३</span>
+                                            <span class="opt-text">वाहनाचा वेग वाढवून पटकन रस्ता पार करावा</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- App Bottom Prev / Next Navigation -->
+                                    <div class="app-question-nav">
+                                        <button type="button" class="app-nav-btn prev-btn">
+                                            <i class="fa-solid fa-chevron-left"></i> मागे
+                                        </button>
+                                        <button type="button" class="app-nav-btn next-btn">
+                                            पुढे <i class="fa-solid fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Feature Achievement Pills -->
+                    <div class="floating-pill-badge pill-top-left">
+                        <i class="fa-solid fa-book-open"></i>
+                        <div>
+                            <strong>480+</strong>
+                            <span data-i18n="hero.pillQuestions">Real Questions</span>
+                        </div>
+                    </div>
+                    <div class="floating-pill-badge pill-bottom-right">
+                        <i class="fa-solid fa-language"></i>
+                        <div>
+                            <strong>100%</strong>
+                            <span data-i18n="hero.pillBilingual">Marathi + Hindi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flowing Organic Orange Wave Transition -->
+        <div class="hero-wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
+                <path d="M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,42.7C840,32,960,32,1080,42.7C1200,53,1320,75,1380,85.3L1440,96L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" fill="#FFFBF5"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker" data-i18n="howItWorks.tag">— HOW IT WORKS —</span>
+                <h2 class="section-title" data-i18n="howItWorks.title">Start Learning Marathi in 3 Simple Steps</h2>
+                <p class="section-subtitle" data-i18n="howItWorks.subtitle">A simple, effective, and fun way to master Marathi using real questions.</p>
+            </div>
+
+            <!-- Exactly 3 Steps -->
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-box-card">
+                    <div class="step-number-badge">01</div>
+                    <div class="step-icon-wrapper">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FF551C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            <path d="M12 7v5m0 0l-2-2m2 2l2-2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="step-heading" data-i18n="howItWorks.step1Title">Download the App</h3>
+                    <p class="step-description" data-i18n="howItWorks.step1Desc">
+                        Install Marathi on your phone and get started in minutes.
+                    </p>
+                </div>
+
+                <!-- Connector Line Desktop -->
+                <div class="step-arrow-connector" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-box-card featured-step">
+                    <div class="step-number-badge">02</div>
+                    <div class="step-icon-wrapper">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FF551C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="step-heading" data-i18n="howItWorks.step2Title">Practice Questions</h3>
+                    <p class="step-description" data-i18n="howItWorks.step2Desc">
+                        Learn through real questions with Marathi and Hindi support.
+                    </p>
+                </div>
+
+                <!-- Connector Line Desktop -->
+                <div class="step-arrow-connector" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-box-card">
+                    <div class="step-number-badge">03</div>
+                    <div class="step-icon-wrapper">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FF551C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3 class="step-heading" data-i18n="howItWorks.step3Title">Track Your Progress</h3>
+                    <p class="step-description" data-i18n="howItWorks.step3Desc">
+                        Answer questions, improve your knowledge, and keep track of your progress.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Experience Showcase Section -->
+    <section id="app-experience" class="experience-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker" data-i18n="experience.tag">— REAL APP EXPERIENCE —</span>
+                <h2 class="section-title" data-i18n="experience.title">Learning Made Simple</h2>
+                <p class="section-subtitle" data-i18n="experience.subtitle">Everything you need to practice Marathi through questions.</p>
+            </div>
+
+            <!-- Interactive Screen Selector Tabs -->
+            <div class="screen-tabs-bar" role="tablist" aria-label="App Showcase Screens">
+                <button type="button" class="screen-tab-btn active" role="tab" aria-selected="true" data-screen="0">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span data-i18n="experience.tab1">1. Question Screen</span>
+                </button>
+                <button type="button" class="screen-tab-btn" role="tab" aria-selected="false" data-screen="1">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    <span data-i18n="experience.tab2">2. Practice & Learn</span>
+                </button>
+                <button type="button" class="screen-tab-btn" role="tab" aria-selected="false" data-screen="2">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span data-i18n="experience.tab3">3. Progress Tracking</span>
+                </button>
+                <button type="button" class="screen-tab-btn" role="tab" aria-selected="false" data-screen="3">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span data-i18n="experience.tab4">4. Quiz & Results</span>
+                </button>
+            </div>
+
+            <!-- 4 Screens Grid / Active Display -->
+            <div class="screens-showcase-grid">
+                <!-- Screen Card 1: Question Screen -->
+                <div class="screen-showcase-item active" data-screen-item="0">
+                    <div class="screen-device-frame">
+                        <div class="mockup-screen-notch"></div>
+                        <img src="assets/images/question.png" alt="Marathi Question Screen with Hindi Support" class="screen-img-clean">
+                    </div>
+                    <div class="screen-details-box">
+                        <span class="screen-badge" data-i18n="experience.s1Badge">CORE EXPERIENCE</span>
+                        <h3 class="screen-title" data-i18n="experience.s1Title">Realistic Question Screen</h3>
+                        <p class="screen-desc" data-i18n="experience.s1Desc">
+                            Practice with real question numbers, clear Marathi typography, immediate Hindi explanation, traffic sign diagrams, audio playback, and previous/next navigation.
+                        </p>
+                        <ul class="screen-feature-list">
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="experience.s1Point1">Question number & category breakdown</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="experience.s1Point2">Dual Marathi & Hindi support on every card</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="experience.s1Point3">Instant native audio pronunciation</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Screen Card 2: Practice Screen -->
+                <div class="screen-showcase-item" data-screen-item="1">
+                    <div class="screen-device-frame">
+                        <div class="mockup-screen-notch"></div>
+                        <img src="assets/images/Home.png" alt="Marathi Practice and Learning Screen" class="screen-img-clean">
+                    </div>
+                    <div class="screen-details-box">
+                        <span class="screen-badge" data-i18n="experience.s2Badge">FOCUSED PRACTICE</span>
+                        <h3 class="screen-title" data-i18n="experience.s2Title">Practice & Learning Mode</h3>
+                        <p class="screen-desc" data-i18n="experience.s2Desc">
+                            Experience guided question-based practice designed to strengthen your comprehension effortlessly without memorizing complex grammar textbooks.
+                        </p>
+                        <ul class="screen-feature-list">
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="experience.s2Point1">Interactive option selection with instant feedback</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="experience.s2Point2">Detailed rule descriptions in simple Hindi</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="experience.s2Point3">Seamless OTP login to sync practice history</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Screen Card 3: Progress Screen -->
+                <div class="screen-showcase-item" data-screen-item="2">
+                    <div class="screen-device-frame">
+                        <div class="mockup-screen-notch"></div>
+                        <img src="assets/images/progress.png" alt="Marathi Progress and Learning Goal Screen" class="screen-img-clean">
+                    </div>
+                    <div class="screen-details-box">
+                        <span class="screen-badge" data-i18n="experience.s3Badge">INSIGHTS</span>
+                        <h3 class="screen-title" data-i18n="experience.s3Title">Progress & Goal Tracking</h3>
+                        <p class="screen-desc" data-i18n="experience.s3Desc">
+                            Monitor your completed questions, accuracy rate, daily study streaks, and remaining question backlog to stay motivated every single day.
+                        </p>
+                        <ul class="screen-feature-list">
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="experience.s3Point1">Real-time completion percentage</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="experience.s3Point2">Streak counters to build daily practice habits</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="experience.s3Point3">Visual category mastery charts</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Screen Card 4: Quiz & Results -->
+                <div class="screen-showcase-item" data-screen-item="3">
+                    <div class="screen-device-frame">
+                        <div class="mockup-screen-notch"></div>
+                        <img src="assets/images/quiz.png" alt="Marathi Quiz and Practice Result Screen" class="screen-img-clean">
+                    </div>
+                    <div class="screen-details-box">
+                        <span class="screen-badge" data-i18n="experience.s4Badge">EVALUATION</span>
+                        <h3 class="screen-title" data-i18n="experience.s4Title">Quiz & Answer Results</h3>
+                        <p class="screen-desc" data-i18n="experience.s4Desc">
+                            Review your score, analyze correct answers, re-attempt missed questions, and smoothly advance to the next set of questions.
+                        </p>
+                        <ul class="screen-feature-list">
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="experience.s4Point1">Instant score breakdown and performance stats</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="experience.s4Point2">One-tap review of incorrect choices</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="experience.s4Point3">Direct continuation to next question batch</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Marathi Section (Exactly 4 Benefits) -->
+    <section id="why-marathi" class="why-section">
+        <div class="container">Everything you need to practice Marathi through questions.
+            <div class="section-header text-center">
+                <span class="section-kicker" data-i18n="why.tag">— WHY CHOOSE MARATHI —</span>
+                <h2 class="section-title" data-i18n="why.title">Designed for Real Understanding</h2>
+                <p class="section-subtitle" data-i18n="why.subtitle">No confusing grammar drills. Just real questions that build genuine practical confidence.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <!-- Benefit 1 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-box">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </div>
+                    <h3 class="benefit-title" data-i18n="why.b1Title">Learn Through Questions</h3>
+                    <p class="benefit-text" data-i18n="why.b1Text">
+                        Practice Marathi using real questions instead of complicated lessons.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-box">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h3 class="benefit-title" data-i18n="why.b2Title">Hindi Support</h3>
+                    <p class="benefit-text" data-i18n="why.b2Text">
+                        Understand questions easily with Hindi assistance.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-box">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    <h3 class="benefit-title" data-i18n="why.b3Title">Listen & Learn</h3>
+                    <p class="benefit-text" data-i18n="why.b3Text">
+                        Use audio support to understand pronunciation and questions.
+                    </p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-box">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="benefit-title" data-i18n="why.b4Title">Track Your Progress</h3>
+                    <p class="benefit-text" data-i18n="why.b4Text">
+                        See your learning progress as you practice.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA Section -->
+    <section id="download" class="download-cta-section">
+        <div class="container">
+            <div class="download-banner-card">
+                <div class="banner-visual-col">
+                    <img src="assets/images/hero_boy_hd.png" alt="Friendly Student Mascot" class="cta-boy-visual">
+                </div>
+                <div class="banner-text-col">
+                    <img src="assets/images/logo_marathi.png" alt="मराठी" class="cta-banner-logo">
+                    <h2 class="banner-heading" data-i18n="downloadBanner.heading">Ready to Start Learning Marathi?</h2>
+                    <p class="banner-subtext" data-i18n="downloadBanner.subtext">Download the app and start practicing today.</p>
+
+                    <div class="banner-btn-row">
+                        <a href="#" class="btn btn-primary btn-lg banner-main-btn" id="banner-download-action">
+                            <span data-i18n="cta.downloadApp">Download App</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="banner-availability-text" data-i18n="downloadBanner.availability">
+                        Available on Android and iOS
+                    </div>
+
+                    <!-- Store Badges in Banner -->
+                    <div class="store-badges-wrap banner-stores">
+                        <a href="#" class="store-badge-card" aria-label="Get on Google Play">
+                            <svg class="store-icon" viewBox="0 0 24 24" width="22" height="22">
+                                <path fill="#34A853" d="M3.6 1.8l10.9 10.9L11.7 15.5 3.6 1.8z"/>
+                                <path fill="#4285F4" d="M3.6 1.8C3.2 2.2 3 2.8 3 3.5v17c0 .7.2 1.3.6 1.7l11-11-11-11z"/>
+                                <path fill="#FBBC05" d="M18.8 10.1l-4.3-2.6-2.8 2.8 2.8 2.8 4.3-2.5c.8-.5.8-1.5 0-2z"/>
+                                <path fill="#EA4335" d="M3.6 22.2l10.9-10.9-2.8-2.8L3.6 22.2z"/>
+                            </svg>
+                            <div class="store-badge-text">
+                                <span class="store-label-sub">GET IT ON</span>
+                                <span class="store-label-main">Google Play</span>
+                            </div>
+                        </a>
+
+                        <a href="#" class="store-badge-card" aria-label="Download on App Store">
+                            <svg class="store-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                                <path d="M18.7 19.5c-.8 1.2-1.7 2.4-3 2.5-1.4.1-1.8-.8-3.3-.8-1.5 0-2 .8-3.3.8-1.3-.1-2.2-1.3-3-2.5-1.7-2.4-3-6.9-1.2-9.9 1-1.6 2.7-2.6 4.5-2.6 1.4 0 2.7.9 3.5.9.8 0 2.4-1.1 4.1-.9 1.4.1 2.7.6 3.6 1.9-3.2 1.9-2.7 6.1.5 7.4-.7 1.2-1.2 2.3-1.7 3.2zM15.9 6.5c.7-.9 1.2-2.1 1-3.3-1 .1-2.3.7-3 1.5-.6.7-1.2 2-1 3.2 1.2.1 2.3-.6 3-1.4z"/>
+                            </svg>
+                            <div class="store-badge-text">
+                                <span class="store-label-sub">Download on the</span>
+                                <span class="store-label-main">App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-card-banner">
+                <div class="about-fort-col">
+                    <img src="assets/images/culture_fort.png" alt="Maharashtra Fort Cultural Heritage" class="about-fort-img">
+                </div>
+                <div class="about-text-col">
+                    <span class="section-kicker" data-i18n="about.tag">— ABOUT MARATHI —</span>
+                    <h2 class="about-title" data-i18n="about.title">About Marathi</h2>
+                    <p class="about-body-text" data-i18n="about.text">
+                        Marathi is a simple learning app designed to help people understand and practice Marathi through questions, examples, audio support and Hindi assistance.
+                    </p>
+
+                    <div class="about-chips-row">
+                        <div class="about-chip">
+                            <i class="fa-solid fa-check"></i>
+                            <span data-i18n="about.chip1">Question-Based Learning</span>
+                        </div>
+                        <div class="about-chip">
+                            <i class="fa-solid fa-check"></i>
+                            <span data-i18n="about.chip2">Marathi + Hindi Assistance</span>
+                        </div>
+                        <div class="about-chip">
+                            <i class="fa-solid fa-check"></i>
+                            <span data-i18n="about.chip3">Native Audio Pronunciation</span>
+                        </div>
+                        <div class="about-chip">
+                            <i class="fa-solid fa-check"></i>
+                            <span data-i18n="about.chip4">Traffic & RTO Practice</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info-col">
+                    <span class="section-kicker" data-i18n="contact.tag">— GET IN TOUCH —</span>
+                    <h2 class="contact-title" data-i18n="contact.title">Have a Question?</h2>
+                    <p class="contact-subtext" data-i18n="contact.subtitle">We’re here to help.</p>
+
+                    <div class="contact-details-box">
+                        <div class="contact-detail-row">
+                            <div class="contact-icon-circle">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="contact-label" data-i18n="contact.emailLabel">Email Support</span>
+                                <p class="contact-val">support@marathiapp.in</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-row">
+                            <div class="contact-icon-circle">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <span class="contact-label" data-i18n="contact.responseLabel">Response Time</span>
+                                <p class="contact-val" data-i18n="contact.responseVal">We usually respond within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-col">
+                    <form class="contact-form-card" id="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name" data-i18n="contact.nameLabel">Name</label>
+                            <input type="text" id="contact-name" class="form-control" placeholder="Your full name" required data-i18n-placeholder="contact.namePlaceholder">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email" data-i18n="contact.emailFieldLabel">Email</label>
+                            <input type="email" id="contact-email" class="form-control" placeholder="name@example.com" required data-i18n-placeholder="contact.emailPlaceholder">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message" data-i18n="contact.messageLabel">Message</label>
+                            <textarea id="contact-message" class="form-control" rows="4" placeholder="How can we help you?" required data-i18n-placeholder="contact.messagePlaceholder"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block contact-submit-btn" id="contact-submit-btn">
+                            <span data-i18n="contact.sendBtn">Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <div class="form-alert" id="form-alert" role="alert" style="display: none;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subtle City / Skyline Outline at Bottom -->
+        <div class="bottom-skyline-wrap" aria-hidden="true">
+            <img src="assets/images/bottom_skyline.png" alt="" class="bottom-skyline-img">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand-col">
+                <img src="assets/images/logo_marathi.png" alt="मराठी" class="footer-logo-img">
+                <p class="footer-tagline" data-i18n="footer.tagline">Learn Marathi. Grow Together.</p>
+                <p class="footer-sub-tagline" data-i18n="footer.subTagline">मराठी शिका, आत्मविश्‍वास वाढवा!</p>
+            </div>
+
+            <div class="footer-links-col">
+                <div class="footer-link-group">
+                    <h4 class="footer-group-title" data-i18n="footer.navTitle">Navigation</h4>
+                    <a href="#hero" data-i18n="nav.home">Home</a>
+                    <a href="#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
+                    <a href="#app-experience" data-i18n="nav.experience">App Experience</a>
+                    <a href="#why-marathi" data-i18n="nav.whyMarathi">Why Marathi</a>
+                </div>
+
+                <div class="footer-link-group">
+                    <h4 class="footer-group-title" data-i18n="footer.infoTitle">Information</h4>
+                    <a href="#about" data-i18n="nav.about">About</a>
+                    <a href="#contact" data-i18n="nav.contact">Contact</a>
+                    <a href="#download" data-i18n="cta.downloadApp">Download App</a>
+                </div>
+
+                <div class="footer-link-group">
+                    <h4 class="footer-group-title" data-i18n="footer.legalTitle">Legal</h4>
+                    <a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="terms-conditions.html" data-i18n="footer.terms">Terms & Conditions</a>
+                    <a href="#contact" data-i18n="footer.support">Support</a>
+                </div>
+            </div>
+
+            <div class="footer-social-col">
+                <h4 class="footer-group-title" data-i18n="footer.socialTitle">Connect With Us</h4>
+                <div class="social-icon-row">
+                    <a href="#" class="social-icon-btn fb" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon-btn ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon-btn yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-icon-btn li" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <p class="copyright-notice" data-i18n="footer.copyright">&copy; 2024 Marathi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

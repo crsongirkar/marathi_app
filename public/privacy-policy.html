@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | मराठी (Marathi App)</title>
+    <meta name="description" content="Privacy Policy for the Marathi mobile application. Learn how we handle and protect your data.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .legal-page-header {
+            padding: clamp(3rem, 6vw, 4.5rem) 0 2rem;
+            background: linear-gradient(180deg, #FFFBF5 0%, #FFF4EC 100%);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .legal-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-navy-muted);
+            margin-bottom: 1rem;
+        }
+        .legal-breadcrumb a {
+            color: var(--color-primary);
+        }
+        .legal-title {
+            font-size: clamp(2.25rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--color-navy-dark);
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+        .legal-meta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #FFFFFF;
+            padding: 0.4rem 0.95rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-navy);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+        }
+        .legal-body-section {
+            padding: clamp(3rem, 5vw, 4.5rem) 0 5rem;
+            background: var(--color-bg-base);
+        }
+        .legal-card {
+            background: #FFFFFF;
+            border-radius: var(--radius-xl);
+            padding: clamp(2rem, 4vw, 3.5rem);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-md);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .legal-section-block {
+            margin-bottom: 2.25rem;
+            padding-bottom: 2.25rem;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+        }
+        .legal-section-block:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .legal-section-block h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--color-navy-dark);
+            margin-bottom: 0.85rem;
+        }
+        .legal-section-block p {
+            font-size: 1.025rem;
+            color: var(--color-navy-muted);
+            line-height: 1.75;
+            margin-bottom: 0.85rem;
+        }
+        .legal-section-block ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            margin-top: 0.5rem;
+        }
+        .legal-section-block ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 1rem;
+            color: var(--color-navy);
+            line-height: 1.6;
+        }
+        .legal-section-block ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0.25rem;
+            top: 0;
+            color: var(--color-primary);
+            font-size: 1.4rem;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar" id="main-nav">
+        <div class="container nav-container">
+            <a href="index.html#hero" class="nav-logo" aria-label="Marathi Home">
+                <img src="assets/images/logo_marathi.png" alt="मराठी" class="logo-img">
+                <span class="logo-tagline" data-i18n="nav.tagline">Learn Together &nbsp;|&nbsp; Grow Together</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html#hero" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="index.html#how-it-works" class="nav-link" data-i18n="nav.howItWorks">How It Works</a>
+                <a href="index.html#app-experience" class="nav-link" data-i18n="nav.experience">App Experience</a>
+                <a href="index.html#why-marathi" class="nav-link" data-i18n="nav.whyMarathi">Why Marathi</a>
+                <a href="index.html#about" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Language Selector">
+                    <button type="button" class="lang-btn active" data-lang="en">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button type="button" class="lang-btn" data-lang="hi">हिंदी</button>
+                </div>
+                <a href="index.html#download" class="btn btn-primary nav-cta-btn">
+                    <span data-i18n="cta.downloadApp">Download App</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <button type="button" class="hamburger-btn" id="hamburger-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-drawer" id="mobile-drawer">
+            <div class="mobile-drawer-content">
+                <nav class="mobile-nav-links">
+                    <a href="index.html#hero" class="mobile-link" data-i18n="nav.home">Home</a>
+                    <a href="index.html#how-it-works" class="mobile-link" data-i18n="nav.howItWorks">How It Works</a>
+                    <a href="index.html#app-experience" class="mobile-link" data-i18n="nav.experience">App Experience</a>
+                    <a href="index.html#why-marathi" class="mobile-link" data-i18n="nav.whyMarathi">Why Marathi</a>
+                    <a href="index.html#about" class="mobile-link" data-i18n="nav.about">About</a>
+                    <a href="index.html#contact" class="mobile-link" data-i18n="nav.contact">Contact</a>
+                </nav>
+                <div class="mobile-drawer-footer">
+                    <a href="index.html#download" class="btn btn-primary btn-block mobile-download-btn" data-i18n="cta.downloadApp">Download App →</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Legal Page Header -->
+    <section class="legal-page-header">
+        <div class="container">
+            <div class="legal-breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                <span data-i18n="privacyPage.breadcrumb">Privacy Policy</span>
+            </div>
+            <h1 class="legal-title" data-i18n="privacyPage.title">Privacy Policy</h1>
+            <div class="legal-meta-badge">
+                <i class="fa-solid fa-shield-halved" style="color: var(--color-primary);"></i>
+                <span data-i18n="privacyPage.lastUpdated">Last updated: September 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal Content -->
+    <section class="legal-body-section">
+        <div class="container">
+            <div class="legal-card">
+                <div class="legal-section-block">
+                    <h3 data-i18n="privacyPage.s1Title">1. Introduction</h3>
+                    <p data-i18n="privacyPage.s1Text">
+                        Welcome to Marathi ("we", "our", or "us"). We respect your privacy and are committed to protecting any personal information you share while using our mobile application. This Privacy Policy outlines what data we collect, how it is used, and your rights.
+                    </p>
+                </div>
+
+                <div class="legal-section-block">
+                    <h3 data-i18n="privacyPage.s2Title">2. Information We Collect</h3>
+                    <p data-i18n="privacyPage.s2Text">
+                        We collect minimal information strictly necessary to deliver and personalize your learning experience:
+                    </p>
+                    <ul>
+                        <li data-i18n="privacyPage.s2Point1"><strong>Account Information:</strong> Mobile phone number for OTP verification, optional name, and learning preferences.</li>
+                        <li data-i18n="privacyPage.s2Point2"><strong>Study & Progress Data:</strong> Question scores, completed flashcards, bookmark favorites, and daily practice streaks.</li>
+                        <li data-i18n="privacyPage.s2Point3"><strong>Device & Diagnostics:</strong> Anonymous diagnostic logs and OS versions to fix bugs and improve performance.</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section-block">
+                    <h3 data-i18n="privacyPage.s3Title">3. How We Use Your Information</h3>
+                    <p data-i18n="privacyPage.s3Text">
+                        Your information is used solely to:
+                    </p>
+                    <ul>
+                        <li data-i18n="privacyPage.s3Point1">Save and synchronize your study progress across app launches.</li>
+                        <li data-i18n="privacyPage.s3Point2">Provide real-time score calculation and tailored question recommendations.</li>
+                        <li data-i18n="privacyPage.s3Point3">Ensure account security via one-time SMS passwords (OTP).</li>
+                        <li data-i18n="privacyPage.s3Point4">Provide prompt customer support when requested.</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section-block">
+                    <h3 data-i18n="privacyPage.s4Title">4. Data Sharing & Security</h3>
+                    <p data-i18n="privacyPage.s4Text">
+                        We never sell, rent, or trade your personal data with third-party advertisers. All network communications are encrypted with industry-standard TLS protocols. We retain your practice data only for as long as your account remains active.
+                    </p>
+                </div>
+
+                <div class="legal-section-block">
+                    <h3 data-i18n="privacyPage.s5Title">5. Contact Us</h3>
+                    <p data-i18n="privacyPage.s5Text">
+                        If you have questions or wish to request data deletion, please contact our privacy team at: <strong>support@marathiapp.in</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand-col">
+                <img src="assets/images/logo_marathi.png" alt="मराठी" class="footer-logo-img">
+                <p class="footer-tagline" data-i18n="footer.tagline">Learn Marathi. Grow Together.</p>
+                <p class="footer-sub-tagline" data-i18n="footer.subTagline">मराठी शिका, आत्मविश्‍वास वाढवा!</p>
+            </div>
+
+            <div class="footer-links-col">
+                <div class="footer-link-group">
+                    <h4 class="footer-group-title" data-i18n="footer.navTitle">Navigation</h4>
+                    <a href="index.html#hero" data-i18n="nav.home">Home</a>
+                    <a href="index.html#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
+                    <a href="index.html#app-experience" data-i18n="nav.experience">App Experience</a>
+                    <a href="index.html#why-marathi" data-i18n="nav.whyMarathi">Why Marathi</a>
+                </div>
+
+                <div class="footer-link-group">
+                    <h4 class="footer-group-title" data-i18n="footer.infoTitle">Information</h4>
+                    <a href="index.html#about" data-i18n="nav.about">About</a>
+                    <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+                    <a href="index.html#download" data-i18n="cta.downloadApp">Download App</a>
+                </div>
+
+                <div class="footer-link-group">
+                    <h4 class="footer-group-title" data-i18n="footer.legalTitle">Legal</h4>
+                    <a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="terms-conditions.html" data-i18n="footer.terms">Terms & Conditions</a>
+                    <a href="index.html#contact" data-i18n="footer.support">Support</a>
+                </div>
+            </div>
+
+            <div class="footer-social-col">
+                <h4 class="footer-group-title" data-i18n="footer.socialTitle">Connect With Us</h4>
+                <div class="social-icon-row">
+                    <a href="#" class="social-icon-btn fb" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon-btn ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon-btn yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-icon-btn li" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <p class="copyright-notice" data-i18n="footer.copyright">&copy; 2024 Marathi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
