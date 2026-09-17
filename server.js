@@ -6,9 +6,17 @@ const authRoutes = require('./src/routes/authRoutes');
 const { notFoundHandler, globalErrorHandler, renderErrorHtml } = require('./src/middleware/errorMiddleware');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5005;
 const HOST = process.env.HOST || 'localhost';
-const BASE_URL = process.env.BASE_URL || `http://${HOST}:${PORT}`;
+
+const getBaseUrl = () => {
+  if (process.env.BASE_URL) return process.env.BASE_URL;
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  return `http://${HOST}:${PORT}`;
+};
+
+const BASE_URL = getBaseUrl();
 const API_PREFIX = process.env.API_PREFIX || '/api/auth';
 
 // Enable Cross-Origin Resource Sharing
@@ -17,6 +25,18 @@ app.use(cors());
 // Middleware to parse incoming JSON payloads
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Serverless DB Auto-Connect Middleware
+let dbInitPromise = null;
+app.use(async (req, res, next) => {
+  if (!getIsConnected() && !getDbStatusInfo().fallbackActive) {
+    if (!dbInitPromise) {
+      dbInitPromise = connectDB();
+    }
+    await dbInitPromise;
+  }
+  next();
+});
 
 // Serve static files from 'public' directory
 app.use(express.static('public'));
