@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const https = require('https');
+const crypto = require('crypto');
 const userService = require('../services/userService');
 
 // In-memory OTP storage: phone -> { otp, expiresAt }
@@ -12,23 +13,36 @@ const generateToken = (id) => {
   return jwt.sign({ id }, secret, { expiresIn });
 };
 
+// Deterministic time-windowed OTP generator for serverless stateless execution
+const getWindowOtp = (phone, windowOffset = 0) => {
+  const secret = process.env.JWT_SECRET || 'marathi_learning_super_secret_jwt_key_2026';
+  // 5-minute time window
+  const window = Math.floor(Date.now() / (5 * 60 * 1000)) + windowOffset;
+  const hash = crypto.createHmac('sha256', secret).update(`${phone}-${window}`).digest('hex');
+  const num = (parseInt(hash.slice(0, 8), 16) % 900000) + 100000;
+  return num.toString();
+};
+
 /**
  * Helper to dispatch SMS via 2Factor API
- * URL Template requested by user:
- * https://2factor.in/API/V1/{$key}/SMS/91{$phone}/{$otp}/{$template}
+ * URL Template: https://2factor.in/API/V1/{$key}/SMS/91{$phone}/{$otp}/{$template}
  */
 const send2FactorSMS = (phone, otp) => {
   return new Promise((resolve) => {
-    const key = process.env.TWOFACTOR_API_KEY;
-    const template = process.env.TWOFACTOR_TEMPLATE || '';
+    const key = process.env.TWOFACTOR_API_KEY || 'aed4d7d6-95e4-11ea-9fa5-0200cd936042';
+    const template = process.env.TWOFACTOR_TEMPLATE || 'OTP1';
 
     if (!key || key === 'your_2factor_api_key_here') {
       console.log(`[2Factor SMS Simulation] Key not configured. Simulated SMS to +91${phone} with OTP: ${otp}`);
       return resolve({ success: true, simulated: true });
     }
 
+    // Extract clean 10-digit Indian phone number
+    const rawDigits = String(phone).replace(/\D/g, '');
+    const cleanPhone = rawDigits.length > 10 ? rawDigits.slice(-10) : rawDigits;
+
     // Build 2Factor API endpoint URL
-    let url = `https://2factor.in/API/V1/${key}/SMS/91${phone}/${otp}`;
+    let url = `https://2factor.in/API/V1/${key}/SMS/91${cleanPhone}/${otp}`;
     if (template && template !== 'AUTOGEN') {
       url += `/${template}`;
     }
@@ -70,19 +84,19 @@ const sendOtp = async (req, res) => {
       });
     }
 
-    const cleanMobile = String(mobileNumber).trim();
-    const mobileRegex = /^[0-9]{10,15}$/;
+    const rawDigits = String(mobileNumber).trim().replace(/\D/g, '');
+    const cleanMobile = rawDigits.length > 10 ? rawDigits.slice(-10) : rawDigits;
 
-    if (!mobileRegex.test(cleanMobile)) {
+    if (cleanMobile.length !== 10) {
       return res.status(400).json({
         success: false,
-        message: 'Invalid mobile number. Must contain 10 to 15 numeric digits.',
+        message: 'Invalid mobile number. Must contain a valid 10-digit phone number.',
       });
     }
 
     // Check if test number for Play Store testing
     const isPlayStoreTestNumber = cleanMobile === '9833207555';
-    const otp = isPlayStoreTestNumber ? '123456' : Math.floor(100000 + Math.random() * 900000).toString();
+    const otp = isPlayStoreTestNumber ? '123456' : getWindowOtp(cleanMobile, 0);
     const expiresAt = Date.now() + 10 * 60 * 1000; // 10 minutes expiry
 
     // Save to memory store
@@ -92,8 +106,6 @@ const sendOtp = async (req, res) => {
     let smsResult = { success: true };
     if (!isPlayStoreTestNumber) {
       smsResult = await send2FactorSMS(cleanMobile, otp);
-    } else {
-     // console.log(`[PlayStore Testing Number] Mobile ${cleanMobile} using test OTP ${otp}`);
     }
 
     return res.status(200).json({
@@ -131,18 +143,21 @@ const verifyOtp = async (req, res) => {
       });
     }
 
-    const cleanMobile = String(mobileNumber).trim();
+    const rawDigits = String(mobileNumber).trim().replace(/\D/g, '');
+    const cleanMobile = rawDigits.length > 10 ? rawDigits.slice(-10) : rawDigits;
     const cleanOtp = String(otp).trim();
 
     const storedData = otpStore.get(cleanMobile);
     const isPlayStoreTestNumber = cleanMobile === '9833207555';
 
-    // Verify OTP matching (strict matching for regular numbers; 123456 allowed ONLY for Play Store test number 9833207555)
+    // Verify OTP matching:
+    // 1. Play Store test number (9833207555) with 123456
+    // 2. In-memory match if within expiry
+    // 3. Deterministic time-windowed match (serverless resilient across instances)
     const isValidOtp =
       (isPlayStoreTestNumber && cleanOtp === '123456') ||
-      (storedData && storedData.otp === cleanOtp && storedData.expiresAt > Date.now());
-
-
+      (storedData && storedData.otp === cleanOtp && storedData.expiresAt > Date.now()) ||
+      (!isPlayStoreTestNumber && (cleanOtp === getWindowOtp(cleanMobile, 0) || cleanOtp === getWindowOtp(cleanMobile, -1)));
 
     if (!isValidOtp) {
       return res.status(400).json({
