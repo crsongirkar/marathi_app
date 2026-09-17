@@ -45,7 +45,6 @@ const translations = {
         experience: {
             tag: "— REAL APP EXPERIENCE —",
             title: "Learning Made Simple",
-            subtitle: "Everything you need to practice Marathi through questions.",
             tab1: "1. Question Screen",
             tab2: "2. Practice & Learn",
             tab3: "3. Progress Tracking",
@@ -395,10 +394,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize Language
     applyLanguage(currentLang);
 
-    // Language Toggle Click Listeners
+    // Language Toggle Click Listeners (both header and mobile drawer)
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
+            e.stopPropagation();
             const targetLang = btn.getAttribute('data-lang');
             if (targetLang && targetLang !== currentLang) {
                 applyLanguage(targetLang);
@@ -433,28 +433,60 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Mobile Hamburger Menu Toggle
+    // 3. Mobile Hamburger Menu Toggle & Drawer
     const hamburgerBtn = document.getElementById('hamburger-toggle');
     const mobileDrawer = document.getElementById('mobile-drawer');
 
     if (hamburgerBtn && mobileDrawer) {
-        hamburgerBtn.addEventListener('click', () => {
-            const isOpen = mobileDrawer.classList.contains('open');
-            if (isOpen) {
-                mobileDrawer.classList.remove('open');
-                hamburgerBtn.setAttribute('aria-expanded', 'false');
-            } else {
-                mobileDrawer.classList.add('open');
-                hamburgerBtn.setAttribute('aria-expanded', 'true');
+        function openDrawer() {
+            mobileDrawer.classList.add('open');
+            hamburgerBtn.classList.add('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            mobileDrawer.classList.remove('open');
+            hamburgerBtn.classList.remove('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        function toggleDrawer(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
             }
-        });
+            if (mobileDrawer.classList.contains('open')) {
+                closeDrawer();
+            } else {
+                openDrawer();
+            }
+        }
+
+        hamburgerBtn.addEventListener('click', toggleDrawer);
 
         // Close drawer when clicking any mobile link
         document.querySelectorAll('.mobile-link, .mobile-download-btn').forEach(link => {
             link.addEventListener('click', () => {
-                mobileDrawer.classList.remove('open');
-                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                closeDrawer();
             });
+        });
+
+        // Close drawer if user clicks outside the drawer content
+        document.addEventListener('click', (e) => {
+            if (mobileDrawer.classList.contains('open')) {
+                if (!mobileDrawer.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                    closeDrawer();
+                }
+            }
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+                closeDrawer();
+            }
         });
     }
 
